@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<meta charset="UTF-8" />
+</head>
+<h1>Produtos</h1>
+
+<table border="1">
+	<thead>
+
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+			<th>Preço</th>
+			<th>Quantidade</th>
+			<th>Apagar</th>
+		</tr>
+	</thead>
+
+	<tbody id="tblProdutos"></tbody>
+</table>
+
+<hr />
+
+<h2 id="tituloForm"></h2>
+<div id="campos">
+	<input type="text" placeholder="nome" id="nome" /> <br /> <input
+		type="text" placeholder="preço" id="preco" /> <br /> <input
+		type="text" placeholder="quantidade" id="quantidade" /> <br />
+	<button onclick="enviaProduto()">Salvar</button>
+	<button onclick="limparSelecionado()">Cancela</button>
+</div>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="index.js">
+
+	
+</script>
+</html>
