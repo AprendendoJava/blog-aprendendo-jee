@@ -1,0 +1,4 @@
+<jboss-web>
+	<!-- O security domain para fazer authentication - usamos o padrão do JBoss -->
+	<security-domain>other</security-domain>
+</jboss-web>
