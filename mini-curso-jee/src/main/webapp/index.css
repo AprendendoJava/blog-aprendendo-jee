@@ -1,0 +1,10 @@
+.selecionado {
+	text-decoration:  underline;
+	color: red;
+}
+button {
+	margin-left: 20px
+}
+form input[type=text] {
+	margin-right: 50px
+}

@@ -1,0 +1,34 @@
+<web-app>
+	<display-name>Mini Curso Java EE</display-name>
+	<!--  Declarações de segurança - qualquer operação de escrita só pode ser feita por admins -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Operações de Admin</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>DELETE</http-method>
+			<http-method>PUT</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<!-- O acesso ao WS de checagem é feito somente por admins -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Checagem admin</web-resource-name>
+			<url-pattern>/rest/admin</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>default</realm-name>
+	</login-config>
+	<security-role>
+		<role-name>admin</role-name>
+	</security-role>
+</web-app>

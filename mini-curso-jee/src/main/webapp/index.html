@@ -1,0 +1,73 @@
+<html ng-app="MiniCursoApp">
+
+<head>
+<meta charset="UTF-8" />
+</head>
+<link rel="stylesheet" target="index.css" />
+<body ng-controller="MiniCursoController">
+	<h1>Cursos</h1>
+
+	<table border="1">
+		<thead>
+
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th>Início</th>
+				<th>Fim</th>
+				<th>Vagas</th>
+				<th>Nome Escola</th>
+				<th>Endereço</th>
+				<th>Sala</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="c in cursos">
+				<td>{{ c.id }}</td>
+				<td>{{ c.nome }}</td>
+				<td>{{ c.descricao }}</td>
+				<td>{{ c.inicio }}</td>
+				<td>{{ c.fim }}</td>
+				<td>{{ c.vagas }}</td>
+				<td>{{ c.escola.nome }}</td>
+				<td>{{ c.escola.endereco }}</td>
+				<td>{{ c.sala }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<h3>
+		<a href="#" ng-click="verificaAdm()">Administração</a>
+	</h3>
+	<div ng-show="ehAdmin">
+		<divng-show"cursoSelecionado">
+		<h4>Adicionar novo</h4>
+		<form>
+			<label>Nome:</label> <input type="text" /> <br /> <label>Descrição:
+			</label> <input type="text" /> <br /> <label>Inicio: </label> <input
+				type="text" placeholder="dd/MM/aaaa hh:mm" /> <br /> <label>Fim:
+			</label> <input type="text" placeholder="dd/MM/aaaa hh:mm" /> <br /><label>Vagas:
+			</label> <input type="text" /> <br /> <label>Escola: </label><select
+				ng-model="c.escola" ng-options="e.nome as e.nome for e in escolas">
+				<option value="">Selecione Escola</option>
+			</select> <br /> <label>Sala: </label> <input type="text" /> <br />
+			<button>Salvar</button>
+		</form>
+	<hr />
+		<h4>Ações</h4>
+		<select ng-model="cursoSelecionado"
+			ng-options="c.nome as c.nome for c in cursos">
+			<option value="">Selecione Curso</option>
+		</select>
+		<button>Matricular Aluno</button>
+		<button>Apagar</button>
+	</div>
+
+	<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="index_controller.js">
+	
+</script>
+</body>
+</html>
